@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<!-- main view (2 rows | 1 column) -->
+<GridPane id="gridPane" gridLinesVisible="false" prefHeight="1000" prefWidth="1000">
+    <columnConstraints>
+        <ColumnConstraints percentWidth="100"></ColumnConstraints>
+    </columnConstraints>
+
+    <rowConstraints>
+        <RowConstraints percentHeight="5" vgrow="ALWAYS"></RowConstraints>
+        <RowConstraints percentHeight="95"></RowConstraints>
+    </rowConstraints>
+
+    <!-- Line of icons menu (open...)(1 row | x columns) -->
+    <GridPane id="menu" gridLinesVisible="false" GridPane.columnIndex="0" GridPane.rowIndex="0">
+        <columnConstraints>
+            <ColumnConstraints percentWidth="5" halignment="CENTER"></ColumnConstraints>
+        </columnConstraints>
+
+        <rowConstraints>
+            <RowConstraints percentHeight="100"></RowConstraints>
+        </rowConstraints>
+
+        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.rowIndex="0">
+            <image>
+                <Image url="/icons/open-files.png" />
+            </image>
+        </ImageView>
+    </GridPane>
+
+    <!-- area where the files are open ( 2 columns | 1 row) -->
+    <GridPane id="files" gridLinesVisible="true" GridPane.columnIndex="0" GridPane.rowIndex="1">
+        <columnConstraints>
+            <ColumnConstraints percentWidth="50"></ColumnConstraints>
+            <ColumnConstraints percentWidth="50"></ColumnConstraints>
+        </columnConstraints>
+
+        <rowConstraints>
+            <RowConstraints percentHeight="100"></RowConstraints>
+        </rowConstraints>
+
+        <!-- left file -->
+        <TextArea id="left-file" editable="false" GridPane.columnIndex="0" GridPane.rowIndex="0" visible="false"/>
+        <!-- right file -->
+        <TextArea id="right-file" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="0" visible="false"/>
+
+    </GridPane>
+
+</GridPane>
