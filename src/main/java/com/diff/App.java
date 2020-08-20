@@ -17,6 +17,8 @@ public class App extends Application {
     public void start(Stage stage) throws Exception {
         Label l = new Label("Hello, JavaFX ");
         Scene scene = new Scene(loadFXML("main"));
+        String style = this.getClass().getResource("/style/style.css").toExternalForm();
+        scene.getStylesheets().add(style);
         stage.setScene(scene);
         stage.setTitle("Diff");
         stage.show();

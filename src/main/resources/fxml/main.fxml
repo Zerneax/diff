@@ -6,7 +6,8 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
 <!-- main view (2 rows | 1 column) -->
-<GridPane id="gridPane" gridLinesVisible="false" prefHeight="1000" prefWidth="1000">
+<?import javafx.scene.text.TextFlow?>
+<GridPane id="gridPane" xmlns:fx="http://javafx.com/fxml" fx:controller="com.diff.controller.MainController" gridLinesVisible="false" prefHeight="1000" prefWidth="1000">
     <columnConstraints>
         <ColumnConstraints percentWidth="100"></ColumnConstraints>
     </columnConstraints>
@@ -26,7 +27,7 @@
             <RowConstraints percentHeight="100"></RowConstraints>
         </rowConstraints>
 
-        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.rowIndex="0">
+        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.rowIndex="0" onMouseClicked="#openFiles">
             <image>
                 <Image url="/icons/open-files.png" />
             </image>
@@ -45,9 +46,11 @@
         </rowConstraints>
 
         <!-- left file -->
-        <TextArea id="left-file" editable="false" GridPane.columnIndex="0" GridPane.rowIndex="0" visible="false"/>
+        <TextFlow fx:id="leftFile" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <!--<TextArea fx:id="leftFile" editable="false" GridPane.columnIndex="0" GridPane.rowIndex="0" visible="false"/>-->
         <!-- right file -->
-        <TextArea id="right-file" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="0" visible="false"/>
+        <TextFlow fx:id="rightFile" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+        <!--<TextArea fx:id="rightFile" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="0" visible="false"/>-->
 
     </GridPane>
 
